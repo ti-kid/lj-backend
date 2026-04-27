@@ -1,10 +1,8 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from fastapi import FastAPI
 
-app = Flask(__name__)
-CORS(app)  # allow all origins
+app = FastAPI()
 
-@app.route("/")
+@app.get("/")
 def home():
-    return jsonify({"message": "Hello from Python backend!"})
+    return {"message": "Hello from Python backend!"}
 
